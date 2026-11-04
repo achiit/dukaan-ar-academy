@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>AR Academy – Learn Together. Grow Together.</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f5f6fb;--card:#fff;--tx:#1b1f3b;--mu:#5d6385;--pr:#1e3a8a;--se:#7c3aed;--bd:#e3e5f2;color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1226;--card:#131c38;--tx:#eef0fb;--mu:#a3abd0;--pr:#6d8cff;--se:#a78bfa;--bd:#243055;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b1226;--card:#131c38;--tx:#eef0fb;--mu:#a3abd0;--pr:#6d8cff;--se:#a78bfa;--bd:#243055;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-padding-top:70px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;line-height:1.5}
+a{color:inherit;text-decoration:none}.w{max-width:1100px;margin:auto;padding:0 18px}
+.btn{border:0;border-radius:999px;padding:10px 20px;font:600 15px inherit;cursor:pointer;background:linear-gradient(90deg,var(--pr),var(--se));color:#fff;display:inline-block}
+.btn.o{background:none;border:2px solid var(--pr);color:var(--pr)}.btn.s{padding:6px 14px;font-size:13px}.btn.r{background:#dc2626}
+nav{position:sticky;top:0;z-index:20;background:var(--card);border-bottom:1px solid var(--bd)}
+nav .w{display:flex;align-items:center;gap:14px;height:60px;overflow-x:auto}
+.logo{font-weight:800;font-size:20px;background:linear-gradient(90deg,var(--pr),var(--se));-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+nav a.l{color:var(--mu);font-size:14px;white-space:nowrap}nav .sp{flex:1}
+.hero{background:linear-gradient(135deg,#1e3a8a,#7c3aed);color:#fff;padding:64px 0;text-align:center}
+.hero h1{font-size:clamp(28px,5vw,48px);margin:8px 0}.hero p{max-width:640px;margin:12px auto 24px;opacity:.92}
+.badges span{display:inline-block;background:#ffffff26;border-radius:999px;padding:4px 12px;margin:3px;font-size:13px}
+.hero .btn{margin:4px}.hero .btn.o{border-color:#fff;color:#fff}
+section{padding:44px 0}h2{font-size:28px;margin:0 0 6px}.sub{color:var(--mu);margin:0 0 22px}
+.g{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+.c{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:18px;box-shadow:0 2px 8px #0000000d}
+.c h3{margin:6px 0 4px;font-size:17px}.c p{margin:0;color:var(--mu);font-size:14px}
+.cls{text-align:center;cursor:pointer;font-weight:700;font-size:18px}.cls:hover{border-color:var(--se)}
+details{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:12px 16px;margin-bottom:8px}summary{cursor:pointer;font-weight:600}
+footer{background:var(--card);border-top:1px solid var(--bd);padding:26px 0;color:var(--mu);font-size:14px;text-align:center}
+input,select,textarea{width:100%;padding:10px 12px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--tx);font:15px inherit;margin:4px 0 10px}
+label{font-size:13px;font-weight:600;color:var(--mu)}
+.form{max-width:520px;margin:30px auto}.f2{display:grid;grid-template-columns:1fr 1fr;gap:0 10px}
+.msg{padding:10px 14px;border-radius:10px;margin:10px 0;font-size:14px;background:#7c3aed22}.msg.e{background:#dc262622}.msg.ok{background:#16a34a22}
+.hide{display:none!important}
+.app{display:flex;min-height:calc(100vh - 60px)}
+.side{width:210px;background:var(--card);border-right:1px solid var(--bd);padding:12px;flex-shrink:0}
+.side a{display:block;padding:10px 12px;border-radius:10px;color:var(--mu);font-size:14px;cursor:pointer;margin-bottom:2px}
+.side a.on,.side a:hover{background:linear-gradient(90deg,var(--pr),var(--se));color:#fff}
+.main{flex:1;padding:20px;min-width:0}
+.chat{height:340px;overflow-y:auto;border:1px solid var(--bd);border-radius:12px;padding:12px;background:var(--bg)}
+.b{max-width:85%;padding:8px 12px;border-radius:14px;margin:6px 0;white-space:pre-wrap;font-size:14px}
+.b.u{background:var(--pr);color:#fff;margin-left:auto}.b.a{background:var(--card);border:1px solid var(--bd)}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.row>input{flex:1;margin:0;min-width:140px}
+.it{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid var(--bd)}
+.bar{height:8px;background:var(--bd);border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--pr),var(--se))}
+table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:8px;border-bottom:1px solid var(--bd);text-align:left}
+.tg{font-size:12px;padding:2px 8px;border-radius:99px;background:var(--bd)}
+@media print{nav,.side,footer,.np,.main>h2{display:none!important}.main{padding:0}:root{--bg:#fff;--card:#fff;--tx:#000;--mu:#444}.c{box-shadow:none;border:0}}
+@media(max-width:760px){.side{position:fixed;bottom:0;left:0;right:0;width:auto;display:flex;overflow-x:auto;z-index:15;border-top:1px solid var(--bd);border-right:0;padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px))}.side a{white-space:nowrap;margin:0 2px}.main{padding:14px 14px 80px}.f2{grid-template-columns:1fr}}
+</style></head><body>
+<nav><div class="w"><a class="logo" href="#" onclick="go('home')">🎓 AR ACADEMY</a>
+<span id="pubnav" class="row" style="gap:14px"><a class="l" href="#about">About</a><a class="l" href="#features">Features</a><a class="l" href="#tutors">AI Tutors</a><a class="l" href="#classes">Classes</a><a class="l" href="#contact">Contact</a></span>
+<span class="sp"></span><span id="auth" class="row"></span></div></nav>
+
+<div id="v-home">
+<header class="hero"><div class="w"><div class="badges"><span>Class 1–12</span><span>All Indian Boards</span><span>AI Powered</span><span>Multilingual</span></div>
+<h1>Your Complete Learning World Starts Here.</h1><p>Explore smarter learning with AI-powered subject tutors, personalized study materials, digital notes, interactive practice tests, and student collaboration. Everything you need for your academic journey is in one place.</p>
+<button class="btn" style="background:#fff;color:#1e3a8a" onclick="go('signup')">Get Started</button><a class="btn o" href="#features">Explore Features</a>
+<p><b>Learn Together. Grow Together.</b></p></div></header>
+<section id="about"><div class="w"><h2>Why Choose AR Academy?</h2><p class="sub">One platform. Every student. Endless learning.</p>
+<div class="g"><div class="c">🤖<h3>AI Subject Tutors</h3><p>Explain, practise and exam-prep modes that teach, not just answer.</p></div><div class="c">🌐<h3>13+ Languages</h3><p>English, Hindi, Urdu, Marathi, Tamil and more.</p></div><div class="c">🏫<h3>All Boards</h3><p>CBSE, ICSE/ISC, NIOS and State Boards.</p></div><div class="c">🔒<h3>Safe by Design</h3><p>Private profiles, owner approval, reporting and moderation.</p></div></div></div></section>
+<section id="classes" style="background:var(--card)"><div class="w"><h2>Explore Classes 1–12</h2><p class="sub">Pick your class to begin.</p><div class="g" id="clsgrid" style="grid-template-columns:repeat(auto-fill,minmax(120px,1fr))"></div></div></section>
+<section id="tutors"><div class="w"><h2>Discover AI Subject Tutors</h2><p class="sub">Each tutor knows your class, board and language.</p><div class="g" id="tutgrid"></div></div></section>
+<section id="features" style="background:var(--card)"><div class="w"><h2>Study Smarter</h2><p class="sub">Everything inside your student dashboard.</p>
+<div class="g"><div class="c">📝<h3>Digital Notes</h3><p>Create, search, pin and save AI answers.</p></div><div class="c">📚<h3>Homework</h3><p>Track deadlines and overdue work.</p></div><div class="c">🎯<h3>Practice Tests</h3><p>Quizzes with instant results and explanations.</p></div><div class="c">🗓️<h3>Study Planner</h3><p>Daily sessions, goals and reminders.</p></div><div class="c">📈<h3>Progress</h3><p>See topics that need more revision.</p></div><div class="c">👫<h3>Friends & Groups</h3><p>Safe collaboration (launching after safety review).</p></div></div></div></section>
+<section><div class="w"><h2>Frequently Asked Questions</h2><br>
+<details><summary>Who can use AR Academy?</summary><p>Students of Class 1–12. New accounts need owner approval before accessing learning features.</p></details>
+<details><summary>Is student chat open to everyone?</summary><p>No. Chat launches only after reporting, blocking, moderation and parental-consent controls are in place.</p></details>
+<details><summary>Which boards are supported?</summary><p>CBSE, CISCE, NIOS and multiple State Boards; verified content rolls out progressively.</p></details></div></section>
+<section id="contact" style="background:var(--card)"><div class="w"><h2>Contact & Support</h2><p class="sub">Questions? Write to us: support@aracademy.example</p></div></section>
+<footer><div class="w">© 2026 AR ACADEMY · Privacy Policy · Terms of Service · Parental Consent · Instagram · YouTube<br>This is a working prototype; data is stored only in your browser.</div></footer>
+</div>
+
+<div id="v-signup" class="hide"><div class="w"><div class="c form"><h2>Create Student Account</h2><div id="sm"></div>
+<label>Full Name</label><input id="s_name"><div class="f2"><div><label>Email</label><input id="s_email" type="email"></div><div><label>Username</label><input id="s_user"></div>
+<div><label>Password</label><input id="s_pw" type="password"></div><div><label>Confirm Password</label><input id="s_pw2" type="password"></div>
+<div><label>Class</label><select id="s_cls"></select></div><div><label>Education Board</label><select id="s_board" onchange="bch()"></select></div></div>
+<div id="stw" class="hide"><label>State</label><select id="s_state"></select></div>
+<div class="f2"><div><label>Medium / Language</label><select id="s_lang"></select></div><div id="strw" class="hide"><label>Stream (11–12)</label><select id="s_str"><option>Science</option><option>Commerce</option><option>Arts / Humanities</option><option>Other / General</option></select></div></div>
+<button class="btn" onclick="signup()">Submit for Approval</button> <a href="#" onclick="go('login');return false" style="color:var(--pr);font-size:14px">Have an account? Login</a></div></div></div>
+
+<div id="v-login" class="hide"><div class="w"><div class="c form"><h2 id="lt">Login</h2><div id="lm"></div>
+<label>Email or Username</label><input id="l_id"><label>Password</label><input id="l_pw" type="password">
+<button class="btn" onclick="login()">Login</button> <a href="#" onclick="go('signup');return false" style="color:var(--pr);font-size:14px">Sign up</a>
+<p class="sub" style="font-size:12px;margin-top:14px">Owner demo login: <b>admin</b> / <b>admin123</b> (change in a real deployment).</p></div></div></div>
+
+<div id="v-app" class="hide"><div class="app"><div class="side" id="side"></div><div class="main" id="main"></div></div></div>
+
+<script>
+var BOARDS=["CBSE","CISCE – ICSE / ISC","NIOS","Maharashtra State Board","Uttar Pradesh Board","Bihar Board","Gujarat Board","Rajasthan Board","Karnataka Board","Tamil Nadu Board","Other Indian State Boards"];
+var LANGS=["English","Hindi","Urdu","Marathi","Gujarati","Bengali","Tamil","Telugu","Kannada","Malayalam","Punjabi","Odia","Assamese"];
+var STATES=["Maharashtra","Uttar Pradesh","Bihar","Gujarat","Rajasthan","Karnataka","Tamil Nadu","Delhi","West Bengal","Other"];
+var TUT=[["➗","Mathematics AI"],["🔬","Science AI"],["⚛️","Physics AI"],["🧪","Chemistry AI"],["🧬","Biology AI"],["📖","English AI"],["🇮🇳","Hindi AI"],["✍️","Urdu AI"],["🏛️","History AI"],["🌍","Geography AI"],["💻","Computer Science AI"],["📊","Economics AI"],["🧾","Accountancy AI"],["💼","Business Studies AI"]];
+var QB=[["What is 3/4 + 1/4?",["1","1/2","3/8","4/8"],0,"Same denominators: add numerators, 4/4 = 1."],["Which gas do plants absorb for photosynthesis?",["Oxygen","Carbon dioxide","Nitrogen","Helium"],1,"Plants take in CO₂ and release oxygen."],["Force = ?",["mass × acceleration","mass ÷ speed","speed × time","mass + weight"],0,"Newton’s second law: F = ma."],["Which is a noun?",["Quickly","Beautiful","Delhi","Run"],2,"Delhi names a place, so it is a noun."],["Capital of India?",["Mumbai","New Delhi","Kolkata","Chennai"],1,"New Delhi is India’s capital."]];
+var KB={fraction:"A fraction shows parts of a whole. Top number = parts taken, bottom = total equal parts. Example: 3/4 means 3 of 4 equal parts.",photosynthesis:"Plants make food using sunlight: carbon dioxide + water → glucose + oxygen, inside chloroplasts using chlorophyll.",newton:"Newton’s 1st law: objects keep their state unless a force acts. 2nd: F = ma. 3rd: every action has an equal and opposite reaction.",noun:"A noun names a person, place, thing or idea. Example: ‘Riya’, ‘school’, ‘kindness’.",gravity:"Gravity is the force that pulls objects toward each other. On Earth it pulls things down at about 9.8 m/s².",acid:"Acids taste sour and turn blue litmus red (pH < 7). Bases feel soapy and turn red litmus blue (pH > 7)."};
+var mem={};
+function ld(k,d){try{var v=localStorage.getItem('ara_'+k);return v?JSON.parse(v):(mem[k]!==undefined?mem[k]:d)}catch(e){return mem[k]!==undefined?mem[k]:d}}
+function sv(k,v){mem[k]=v;try{localStorage.setItem('ara_'+k,JSON.stringify(v))}catch(e){}}
+function $(i){return document.getElementById(i)}
+function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML}
+function opts(a,sel){return a.map(function(x){return '<option>'+x+'</option>'}).join('')}
+var users=ld('users',[]),me=ld('me',null),sets=ld('sets',{reg:true,appr:true,ai:true,notes:true,tests:true});
+var isAdmin=ld('admin',false),page='home';
+function go(v){['home','signup','login','app'].forEach(function(x){$('v-'+x).classList.toggle('hide',x!==v)});$('pubnav').classList.toggle('hide',v==='app');window.scrollTo(0,0);if(v==='app')render()}
+function bar(){var h='';if(me||isAdmin){h='<span class="tg">'+(isAdmin?'Owner':esc(me.name.split(' ')[0]))+'</span><button class="btn s" onclick="go(\'app\')">Dashboard</button><button class="btn o s" onclick="logout()">Logout</button>'}else h='<button class="btn o s" onclick="go(\'login\')">Login</button><button class="btn s" onclick="go(\'signup\')">Sign Up</button>';$('auth').innerHTML=h}
+function init(){
+ $('clsgrid').innerHTML=Array.from({length:12},function(_,i){return '<div class="c cls" onclick="pickCls('+(i+1)+')">Class '+(i+1)+'</div>'}).join('');
+ $('tutgrid').innerHTML=TUT.map(function(t){return '<div class="c"><div style="font-size:26px">'+t[0]+'</div><h3>'+t[1]+'</h3></div>'}).join('');
+ $('s_cls').innerHTML=Array.from({length:12},function(_,i){return '<option value="'+(i+1)+'">Class '+(i+1)+'</option>'}).join('');
+ $('s_cls').onchange=cch;$('s_board').innerHTML=opts(BOARDS);$('s_state').innerHTML=opts(STATES);$('s_lang').innerHTML=opts(LANGS);bar();bch();cch()}
+function pickCls(n){go('signup');$('s_cls').value=n;cch()}
+function cch(){$('strw').classList.toggle('hide',+$('s_cls').value<11)}
+function bch(){$('stw').classList.toggle('hide',!/State|Other/.test($('s_board').value))}
+function note(id,t,c){$(id).innerHTML='<div class="msg '+(c||'')+'">'+t+'</div>'}
+function signup(){
+ if(!sets.reg)return note('sm','Registrations are currently closed.','e');
+ var u={name:$('s_name').value.trim(),email:$('s_email').value.trim().toLowerCase(),user:$('s_user').value.trim().toLowerCase(),pw:$('s_pw').value,cls:$('s_cls').value,board:$('s_board').value,state:$('stw').classList.contains('hide')?'':$('s_state').value,lang:$('s_lang').value,stream:+$('s_cls').value>=11?$('s_str').value:'',status:sets.appr?'Pending':'Approved',id:Date.now()};
+ if(!u.name||!u.email||!u.user||u.pw.length<6)return note('sm','Please fill all fields. Password needs 6+ characters.','e');
+ if(u.pw!==$('s_pw2').value)return note('sm','Passwords do not match.','e');
+ if(users.some(function(x){return x.email===u.email||x.user===u.user}))return note('sm','Email or username already registered.','e');
+ users.push(u);sv('users',users);note('sm',sets.appr?'Account submitted! Status: <b>Pending Approval</b>. The owner will review it; you can log in to check status.':'Account created. You can log in now.','ok')}
+function login(){
+ var id=$('l_id').value.trim().toLowerCase(),pw=$('l_pw').value;
+ if(id==='admin'&&pw==='admin123'){isAdmin=true;sv('admin',true);me=null;sv('me',null);bar();page='adash';return go('app')}
+ var u=users.find(function(x){return(x.email===id||x.user===id)&&x.pw===pw});
+ if(!u)return note('lm','Incorrect login details.','e');
+ var m={Pending:'Your account is <b>Pending Approval</b>. Please wait for the owner to approve it.',Rejected:'Your registration was <b>Rejected</b>. Contact support.',Blocked:'Your account is <b>Blocked</b>. Contact support.'}[u.status];
+ if(m)return note('lm',m,'e');
+ me=u;sv('me',u);page='home';bar();go('app')}
+function logout(){me=null;isAdmin=false;sv('me',null);sv('admin',false);bar();go('home')}
+function D(k,d){return ld(k+(me?me.id:'a'),d)}function S(k,v){sv(k+(me?me.id:'a'),v)}
+function render(){
+ var items=isAdmin?[['adash','🏠','Overview'],['astu','👥','Students'],['abc','📢','Broadcast'],['apaper','📄','Paper Maker'],['aset','⚙️','Controls']]:[['home','🏠','Home'],['tut','🤖','AI Tutors'],['notes','📝','My Notes'],['hw','📚','Homework'],['test','🎯','Practice Tests'],['plan','🗓️','Study Planner'],['prog','📈','My Progress'],['board','📢','Notice Board'],['chat','💬','Chat'],['set','⚙️','Settings']];
+ if(!isAdmin&&!items.some(function(i){return i[0]===page}))page='home';
+ $('side').innerHTML=items.map(function(i){return '<a class="'+(page===i[0]?'on':'')+'" onclick="page=\''+i[0]+'\';render()">'+i[1]+' '+i[2]+'</a>'}).join('');
+ var f=P[page];$('main').innerHTML=f?f():'';if(window.after)after()}
+function blocked(k,n){return sets[k]?'':'<div class="msg e">'+n+' has been disabled by the owner.</div>'}
+var chatLog=[],mode='Explain';
+var P={
+home:function(){var n=D('notes',[]).length,h=D('hw',[]).filter(function(x){return!x.done}).length,t=D('res',[]);
+ return '<h2>Welcome, '+esc(me.name)+'! 👋</h2><p class="sub">Class '+me.cls+' · '+esc(me.board)+(me.state?' · '+esc(me.state):'')+' · '+esc(me.lang)+(me.stream?' · '+esc(me.stream):'')+'</p><div class="g"><div class="c"><h3>📝 '+n+'</h3><p>Notes saved</p></div><div class="c"><h3>📚 '+h+'</h3><p>Pending homework</p></div><div class="c"><h3>🎯 '+t.length+'</h3><p>Tests attempted</p></div></div><br><div class="c"><h3>Continue Learning</h3><p>Ask an AI Tutor about a chapter, take a practice test, or plan today’s study session.</p><br><button class="btn s" onclick="page=\'tut\';render()">Open AI Tutor</button></div>'},
+tut:function(){return '<h2>AI Tutors</h2>'+blocked('ai','AI Tutors')+'<div class="row"><select id="tsub" style="width:auto">'+TUT.map(function(t){return '<option>'+t[1]+'</option>'}).join('')+'</select><select id="tmode" style="width:auto"><option>Explain</option><option>Practice</option><option>Exam Preparation</option></select><button class="btn o s" onclick="chatLog=[];render()">New conversation</button></div><br><div class="chat" id="chat">'+(chatLog.length?chatLog.map(bub).join(''):'<div class="b a">Hi! Pick a subject and mode, then ask me a topic (try: fraction, photosynthesis, newton, noun, gravity, acid).</div>')+'</div><br><div class="row"><input id="tq" placeholder="Type your question…" onkeydown="if(event.key===\'Enter\')ask()"><button class="btn" onclick="ask()">Send</button></div><p class="sub" style="font-size:12px;margin-top:8px">Powered by Claude AI. Answers can occasionally be wrong, so check important points with your teacher or textbook.</p>'},
+notes:function(){var ns=D('notes',[]),q=(window.nq||'').toLowerCase();ns=ns.filter(function(n){return(n.t+n.b).toLowerCase().indexOf(q)>-1});
+ ns.sort(function(a,b){return(b.pin?1:0)-(a.pin?1:0)});
+ return '<h2>My Notes</h2>'+blocked('notes','Notes')+'<div class="c"><input id="nt" placeholder="Title"><textarea id="nb" rows="4" placeholder="Write your note…"></textarea><button class="btn s" onclick="addNote()">Save Note</button> <button class="btn o s" onclick="window.print()">Print / PDF</button></div><br><input placeholder="🔍 Search notes" value="'+esc(window.nq||'')+'" oninput="window.nq=this.value;render();var e=document.querySelector(\'input[placeholder^=&quot;🔍&quot;]\');"><div>'+ns.map(function(n){return '<div class="c" style="margin-bottom:10px"><div class="it" style="border:0;padding:0"><b>'+(n.pin?'📌 ':'')+esc(n.t)+'</b><span><button class="btn o s" onclick="pinNote('+n.id+')">Pin</button> <button class="btn r s" onclick="delNote('+n.id+')">Delete</button></span></div><p style="white-space:pre-wrap">'+esc(n.b)+'</p></div>'}).join('')+'</div>'},
+hw:function(){var h=D('hw',[]),today=new Date().toISOString().slice(0,10);
+ return '<h2>Homework</h2><div class="c"><div class="f2"><div><label>Subject</label><input id="hs"></div><div><label>Due date</label><input id="hd" type="date"></div></div><label>Description</label><input id="hx"><button class="btn s" onclick="addHw()">Add Homework</button></div><br>'+(h.length?h.map(function(x){var od=!x.done&&x.d&&x.d<today;return '<div class="it"><span style="'+(x.done?'text-decoration:line-through;opacity:.6':'')+'"><b>'+esc(x.s)+'</b> — '+esc(x.x)+' <span class="tg">'+(x.d||'no date')+'</span>'+(od?' <span class="tg" style="background:#dc262633">Overdue</span>':'')+'</span><span><button class="btn o s" onclick="togHw('+x.id+')">'+(x.done?'Undo':'Done')+'</button> <button class="btn r s" onclick="delHw('+x.id+')">✕</button></span></div>'}).join(''):'<p class="sub">No homework yet.</p>')},
+test:function(){return '<h2>Practice Test</h2>'+blocked('tests','Practice tests')+'<div class="c" id="quiz">'+QB.map(function(q,i){return '<p><b>'+(i+1)+'. '+q[0]+'</b></p>'+q[1].map(function(o,j){return '<label style="display:block;font-weight:400;color:var(--tx)"><input type="radio" name="q'+i+'" value="'+j+'" style="width:auto;margin:0 8px 0 0">'+o+'</label>'}).join('')}).join('')+'<br><button class="btn" onclick="grade()">Submit Test</button><div id="rs"></div></div>'},
+plan:function(){var p=D('plan',[]);return '<h2>Study Planner</h2><div class="c"><div class="f2"><div><label>Subject</label><input id="ps"></div><div><label>Time</label><input id="pt" type="time"></div></div><label>Duration (minutes)</label><input id="pd" type="number" value="30"><button class="btn s" onclick="addPlan()">Add Session</button></div><br>'+p.sort(function(a,b){return(a.t||'').localeCompare(b.t||'')}).map(function(x){return '<div class="it"><span style="'+(x.done?'text-decoration:line-through;opacity:.6':'')+'">'+(x.t||'--:--')+' · <b>'+esc(x.s)+'</b> ('+x.d+' min)</span><span><button class="btn o s" onclick="togPlan('+x.id+')">'+(x.done?'Undo':'Done')+'</button> <button class="btn r s" onclick="delPlan('+x.id+')">✕</button></span></div>'}).join('')},
+prog:function(){var r=D('res',[]),pl=D('plan',[]),hw=D('hw',[]),avg=r.length?Math.round(r.reduce(function(a,b){return a+b},0)/r.length):0,dn=hw.filter(function(x){return x.done}).length;
+ function row(l,v){return '<p>'+l+' — '+v+'%</p><div class="bar"><i style="width:'+v+'%"></i></div>'}
+ return '<h2>My Progress</h2><div class="c">'+row('Average quiz score ('+r.length+' tests)',avg)+row('Homework completed',hw.length?Math.round(dn*100/hw.length):0)+row('Study sessions completed',pl.length?Math.round(pl.filter(function(x){return x.done}).length*100/pl.length):0)+'<p class="sub">'+(avg&&avg<70?'Suggestion: revise a few topics and retake a test — you are building momentum!':'Keep going — consistent practice builds confidence.')+'</p></div>'},
+set:function(){return '<h2>Settings</h2><div class="c"><p><b>'+esc(me.name)+'</b> · @'+esc(me.user)+'</p><p>Class '+me.cls+' · '+esc(me.board)+' · '+esc(me.lang)+'</p><p class="sub">Profile is private by default. Chat and groups open after safety review.</p><button class="btn o s" onclick="var t=document.documentElement;t.setAttribute(\'data-theme\',t.getAttribute(\'data-theme\')===\'dark\'?\'light\':\'dark\')">Toggle Dark Mode</button> <button class="btn r s" onclick="if(confirm(\'Request account deletion?\')){users=users.filter(function(x){return x.id!==me.id});sv(\'users\',users);logout()}">Request Account Deletion</button></div>'},
+board:function(){var b=ld('bc',[]);return '<h2>Notice Board</h2>'+(b.length?b.map(function(x){return '<div class="c" style="margin-bottom:10px"><span class="tg">'+x.time+'</span>'+bcHtml(x)+'</div>'}).join(''):'<p class="sub">No notices from the owner yet.</p>')},
+chat:function(){var rm=window.rm||'';window.rm='';var bl=D('blk',[]),cur=window.cp,peers=users.filter(function(u){return u.status==='Approved'&&u.id!==me.id&&bl.indexOf(u.id)<0});
+ return '<h2>Student Chat</h2>'+(rm?'<div class="msg ok">'+rm+'</div>':'')+'<div class="msg">Be kind and respectful. Never share phone numbers, address or passwords. You can block or report anyone, and unblock them later if you change your mind.</div><div class="row"><select id="cpick" style="width:auto" onchange="window.cp=+this.value||null;render()"><option value="">Select a student…</option>'+peers.map(function(u){return '<option value="'+u.id+'"'+(cur===u.id?' selected':'')+'>'+esc(u.name)+' (Class '+u.cls+')</option>'}).join('')+'</select>'+(cur?'<button class="btn o s" onclick="blkU()">Block</button><button class="btn o s" onclick="repU()">Report</button>':'')+'</div>'+blkList()+'<br>'+(cur?'<div class="chat" id="chat">'+chatHtml()+'</div><br><div class="row"><input id="cm" placeholder="Type a message…" onkeydown="if(event.key===\'Enter\')sendMsg()"><button class="btn" onclick="sendMsg()">Send</button></div>':(peers.length?'':'<p class="sub">No other approved students yet.</p>'))},
+abc:function(){var b=ld('bc',[]);return '<h2>Broadcast to All Students</h2><div class="c np"><label>Message</label><textarea id="bm" rows="3"></textarea><label>Attach PDF or image (max 1.5 MB)</label><input id="bf" type="file" accept="image/*,application/pdf"><button class="btn" onclick="sendBc()">Send to all students</button><div id="bs"></div></div><br>'+b.map(function(x){return '<div class="c" style="margin-bottom:10px"><div class="it" style="border:0;padding:0"><span class="tg">'+x.time+'</span><button class="btn r s" onclick="delBc('+x.id+')">Delete</button></div>'+bcHtml(x)+'</div>'}).join('')},
+apaper:function(){return '<h2>AI Question Paper Maker</h2><div class="c np"><div class="f2"><div><label>Class</label><input id="pc" placeholder="e.g. 8"></div><div><label>Subject</label><input id="pj" placeholder="e.g. Science"></div><div><label>Total marks</label><input id="pm" type="number" value="30"></div><div><label>Time (minutes)</label><input id="pti" type="number" value="60"></div></div><label>Chapter(s) / topics</label><input id="pch" placeholder="e.g. Chapter 3: Photosynthesis"><label>Your instructions (optional)</label><textarea id="pin" rows="2" placeholder="e.g. 5 MCQ, 5 short answers, 2 long answers, easy level"></textarea><button class="btn" onclick="mkPaper()">Generate Paper</button> <button class="btn o s" onclick="window.print()">Print / Save as PDF</button> <button class="btn o s" onclick="savePaper()">Download .txt</button></div><br><div class="c" id="paper">'+(window.pp||'<p class="sub">Your paper will appear here.</p>')+'</div>'},
+achat:function(){var m=ld('chat',[]),r=ld('rep',[]);function nm(i){var u=users.find(function(x){return x.id===i});return u?esc(u.name):'?'}
+ return '<h2>Chat Moderation</h2><h3>Reports ('+r.length+')</h3>'+r.map(function(x){return '<div class="it"><span>'+esc(x.from)+' reported '+esc(x.about)+' <span class="tg">'+x.time+'</span></span></div>'}).join('')+'<h3>All messages</h3>'+m.map(function(x){return '<div class="it"><span><b>'+nm(x.a)+'</b> → <b>'+nm(x.b)+'</b>: '+esc(x.t)+'</span><button class="btn r s" onclick="delMsg('+x.id+')">Delete</button></div>'}).join('')},
+adash:function(){var c=function(s){return users.filter(function(u){return u.status===s}).length};return '<h2>Owner Dashboard</h2><div class="g"><div class="c"><h3>'+users.length+'</h3><p>Total students</p></div><div class="c"><h3>'+c('Pending')+'</h3><p>Pending requests</p></div><div class="c"><h3>'+c('Approved')+'</h3><p>Approved</p></div><div class="c"><h3>'+c('Blocked')+'</h3><p>Blocked</p></div><div class="c"><h3>'+BOARDS.length+'</h3><p>Boards</p></div></div>'},
+astu:function(){return '<h2>Students</h2><div style="overflow-x:auto"><table><tr><th>Name</th><th>Class</th><th>Board</th><th>Status</th><th>Action</th></tr>'+users.map(function(u){return '<tr><td>'+esc(u.name)+'<br><small>'+esc(u.email)+'</small></td><td>'+u.cls+'</td><td>'+esc(u.board)+'</td><td><span class="tg">'+u.status+'</span></td><td><button class="btn s" onclick="st('+u.id+',\'Approved\')">Approve</button> <button class="btn o s" onclick="st('+u.id+',\'Rejected\')">Reject</button> <button class="btn r s" onclick="st('+u.id+',\'Blocked\')">Block</button></td></tr>'}).join('')+'</table></div>'+(users.length?'':'<p class="sub">No registrations yet.</p>')},
+aset:function(){var L={reg:'Registration open',appr:'Require manual approval',ai:'AI Tutors',notes:'Notes',tests:'Practice Tests'};return '<h2>Global Controls</h2><div class="c">'+Object.keys(L).map(function(k){return '<div class="it"><span>'+L[k]+'</span><input type="checkbox" style="width:auto;margin:0" '+(sets[k]!==false?'checked':'')+' onchange="sets[\''+k+'\']=this.checked;sv(\'sets\',sets)"></div>'}).join('')+'</div>'}};
+function st(id,s){users.forEach(function(u){if(u.id===id)u.status=s});sv('users',users);render()}
+function bcHtml(x){return (x.m?'<p style="white-space:pre-wrap">'+esc(x.m)+'</p>':'')+(x.f?(x.ft.indexOf('image')===0?'<img src="'+x.f+'" style="max-width:100%;border-radius:10px">':'<button class="btn o s" onclick="dl('+x.id+')">📄 '+esc(x.fn)+' (download)</button>'):'')}
+function sendBc(){var m=$('bm').value.trim(),f=$('bf').files[0];if(!m&&!f)return note('bs','Write a message or attach a file.','e');
+ function fin(d){var b=ld('bc',[]);b.unshift({id:Date.now(),m:m,f:d,ft:f?f.type:'',fn:f?f.name:'',time:new Date().toLocaleString()});sv('bc',b);render()}
+ if(!f)return fin('');if(f.size>1.5e6)return note('bs','File too large (max 1.5 MB).','e');var r=new FileReader();r.onload=function(){fin(r.result)};r.readAsDataURL(f)}
+function delBc(id){sv('bc',ld('bc',[]).filter(function(x){return x.id!==id}));render()}
+async function dl(id){var x=ld('bc',[]).find(function(y){return y.id===id});if(!x)return;var d=null;try{d=await claude.use('downloads')}catch(e){}if(!d)return;var bin=atob(x.f.split(',')[1]),u=new Uint8Array(bin.length);for(var i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i);try{await d.save({filename:x.fn,data:u})}catch(e){}}
+function chatHtml(){var ms=ld('chat',[]).filter(function(x){return(x.a===me.id&&x.b===window.cp)||(x.b===me.id&&x.a===window.cp)});return ms.map(function(x){var mine=x.a===me.id;return '<div class="b '+(mine?'u':'a')+'">'+esc(x.t)+(mine?' <a style="cursor:pointer" onclick="delMsg('+x.id+')">✕</a>':'')+'<br><small>'+x.time+'</small></div>'}).join('')||'<div class="b a">Say hello! 👋</div>'}
+function sendMsg(){var t=$('cm').value.trim();if(!t||!window.cp)return;if(ld('blk'+window.cp,[]).indexOf(me.id)>-1)return;var m=ld('chat',[]);m.push({id:Date.now(),a:me.id,b:window.cp,t:t.slice(0,500),time:new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})});sv('chat',m);$('cm').value='';$('chat').innerHTML=chatHtml();$('chat').scrollTop=1e6}
+function delMsg(id){sv('chat',ld('chat',[]).filter(function(x){return x.id!==id}));render()}
+function blkList(){var bl=D('blk',[]).map(function(id){return users.find(function(u){return u.id===id})}).filter(Boolean);return bl.length?'<p class="sub" style="margin:10px 0 4px">Blocked students:</p>'+bl.map(function(u){return '<div class="it"><span>'+esc(u.name)+'</span><button class="btn o s" onclick="unblk('+u.id+')">Unblock</button></div>'}).join(''):''}
+function unblk(id){S('blk',D('blk',[]).filter(function(x){return x!==id}));render()}
+function blkU(){var b=D('blk',[]);b.push(window.cp);S('blk',b);window.cp=null;render()}
+function repU(){var u=users.find(function(x){return x.id===window.cp}),r=ld('rep',[]);r.push({from:me.name,about:u?u.name:'?',time:new Date().toLocaleString()});sv('rep',r);window.rm='Reported to the owner. Thank you for keeping AR Academy safe.';render()}
+setInterval(function(){if(page==='chat'&&window.cp&&$('chat')&&me)$('chat').innerHTML=chatHtml()},3000);
+async function mkPaper(){var g=function(i){return $(i).value.trim()},c=g('pc'),s=g('pj'),mk=g('pm'),t=g('pti'),ch=g('pch'),ins=g('pin');if(!s||!ch){$('paper').textContent='Please enter subject and chapter.';return}var sm=null;try{sm=await claude.use('sample')}catch(e){}
+ if(!sm){$('paper').textContent='AI is not available here.';return}$('paper').textContent='Creating paper…';
+ try{var r=await sm('Create a school question paper. Class: '+c+'. Subject: '+s+'. Chapters/topics: '+ch+'. Total marks: '+mk+'. Time: '+t+' minutes. Owner instructions: '+(ins||'Mix of MCQ, short and long answer questions, board style.')+'\n\nRules: Do NOT write any title, school name or class/subject/marks header (added separately). Start with General Instructions (3-4 lines), then Sections A, B, C with marks per question and numbered questions. Marks must add up to exactly the total. Plain text only, no markdown symbols. Do not include answers.',{cache:false});
+ window.ptxt='AR ACADEMY\nQuestion Paper\nClass '+c+' | '+s+' | Time: '+t+' min | Max Marks: '+mk+'\nChapter: '+ch+'\n\n'+r.text;
+ window.pp='<div style="text-align:center"><h1 style="margin:0;letter-spacing:2px">AR ACADEMY</h1><div style="color:var(--mu)">Learn Together. Grow Together.</div><h3 style="margin:8px 0">Question Paper</h3></div><div class="it"><span>Class: '+esc(c)+' · Subject: '+esc(s)+'</span><span>Time: '+esc(t)+' min · Max Marks: '+esc(mk)+'</span></div><p><b>Chapter:</b> '+esc(ch)+'</p><div style="white-space:pre-wrap">'+esc(r.text)+'</div>';$('paper').innerHTML=window.pp}catch(e){$('paper').textContent='Could not create the paper. Please try again.'}}
+async function savePaper(){if(!window.ptxt)return;var d=null;try{d=await claude.use('downloads')}catch(e){}if(d)try{await d.save({filename:'AR-Academy-Question-Paper.txt',data:window.ptxt})}catch(e){}}
+function bub(m){return '<div class="b '+m[0]+'">'+esc(m[1])+'</div>'}
+async function ask(){var q=$('tq').value.trim();if(!q||!sets.ai)return;var sub=$('tsub').value,md=$('tmode').value,sm=null;try{sm=await claude.use('sample')}catch(e){}
+ if(!sm)return askLocal();
+ var hist=chatLog.filter(function(m){return m[1]!=='Thinking…'}).slice(-8).map(function(m){return{role:m[0]==='u'?'user':'assistant',content:m[1]}});
+ var ins='You are the '+sub+' on AR Academy, tutoring a Class '+me.cls+' student of the '+me.board+(me.state?' ('+me.state+')':'')+(me.stream?', '+me.stream+' stream':'')+'. Reply in '+me.lang+' unless the student writes in another language. Mode: '+md+'. Explain mode: simple language with an example. Practice mode: give 3 questions on the topic and check their answers. Exam Preparation mode: board-style questions with model answers. Teach step by step so the student understands, do not just dump the final answer. Be clear, concise and age-appropriate. Plain text only, no markdown symbols.\n\nStudent question: '+q;
+ hist.push({role:'user',content:ins});chatLog.push(['u',q],['a','Thinking…']);render();$('tsub').value=sub;$('tmode').value=md;
+ var box=$('chat'),i=chatLog.length-1;box.scrollTop=box.scrollHeight;
+ try{var r=await sm(hist,{cache:false,onText:function(t){chatLog[i][1]=t.text;if(box.lastElementChild)box.lastElementChild.textContent=t.text;box.scrollTop=box.scrollHeight}});chatLog[i][1]=r.text}catch(e){chatLog[i][1]='Sorry, the AI tutor could not answer right now. Please try again in a moment.';if(box.lastElementChild)box.lastElementChild.textContent=chatLog[i][1]}}
+function askLocal(){var q=$('tq').value.trim();if(!q)return;if(!sets.ai)return;var sub=$('tsub').value,md=$('tmode').value,k=Object.keys(KB).find(function(k){return q.toLowerCase().indexOf(k)>-1}),a;
+ if(md==='Explain')a=k?KB[k]+'\n\nTry it: explain this back in your own words!':'Let’s break “'+q+'” into small steps: 1) define the key term, 2) see one example, 3) try a similar question yourself. Tell me which step is unclear.';
+ else if(md==='Practice')a='Practice ('+sub+'): ① State the main idea of “'+q+'”. ② Give one example. ③ Solve one question on it and share your attempt — I’ll guide you.';
+ else a='Exam prep ('+sub+', Class '+me.cls+' '+me.board+'): Write a 3-mark answer on “'+q+'”: definition, example/diagram, conclusion. '+(k?'\nKey points: '+KB[k]:'');
+ chatLog.push(['u',q],['a',a]);render();var c=$('chat');if(c)c.scrollTop=c.scrollHeight}
+function addNote(){var t=$('nt').value.trim(),b=$('nb').value.trim();if(!t&&!b||!sets.notes)return;var n=D('notes',[]);n.push({id:Date.now(),t:t||'Untitled',b:b});S('notes',n);render()}
+function delNote(id){S('notes',D('notes',[]).filter(function(x){return x.id!==id}));render()}
+function pinNote(id){var n=D('notes',[]);n.forEach(function(x){if(x.id===id)x.pin=!x.pin});S('notes',n);render()}
+function addHw(){var s=$('hs').value.trim();if(!s)return;var h=D('hw',[]);h.push({id:Date.now(),s:s,x:$('hx').value,d:$('hd').value});S('hw',h);render()}
+function togHw(id){var h=D('hw',[]);h.forEach(function(x){if(x.id===id)x.done=!x.done});S('hw',h);render()}
+function delHw(id){S('hw',D('hw',[]).filter(function(x){return x.id!==id}));render()}
+function addPlan(){var s=$('ps').value.trim();if(!s)return;var p=D('plan',[]);p.push({id:Date.now(),s:s,t:$('pt').value,d:$('pd').value});S('plan',p);render()}
+function togPlan(id){var p=D('plan',[]);p.forEach(function(x){if(x.id===id)x.done=!x.done});S('plan',p);render()}
+function delPlan(id){S('plan',D('plan',[]).filter(function(x){return x.id!==id}));render()}
+function grade(){var sc=0,out='';QB.forEach(function(q,i){var s=document.querySelector('input[name=q'+i+']:checked'),ok=s&&+s.value===q[2];if(ok)sc++;out+='<p>'+(ok?'✅':'❌')+' Q'+(i+1)+': '+q[3]+'</p>'});var pct=Math.round(sc*100/QB.length),r=D('res',[]);r.push(pct);S('res',r);$('rs').innerHTML='<div class="msg ok"><b>Score: '+sc+'/'+QB.length+' ('+pct+'%)</b></div>'+out}
+init();
+</script></body></html>
